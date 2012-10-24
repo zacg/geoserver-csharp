@@ -63,13 +63,13 @@ namespace GeoserverClient
 
         /**
          * Sample urrels:
-        http://geoserver.nl/rest/agn/gebouwen?wkt=POLYGON((234403 579310,234403 579313,234397 579312,234403 579310))
-        http://geoserver.nl/rest/agn/gebouwen?wkt=POINT(234403 579310)
-        http://geoserver.nl/rest/agn/gebouwen/3100000117486
-        http://geoserver.nl/rest/agn/gebouwen?postcode=1094jb&huisnummer=21
-        http://geoserver.nl/rest/agn/adressen/363010000705816
-        http://geoserver.nl/rest/agn/adressen?postcode=1053el&huisnummer=188
-        http://geoserver.nl/rest/agn/gebouwen?postcode=1053el&huisnummer=188&huisnrtoev=H
+        https://geoserver.nl/rest/agn/gebouwen?wkt=POLYGON((234403 579310,234403 579313,234397 579312,234403 579310))
+        https://geoserver.nl/rest/agn/gebouwen?wkt=POINT(234403 579310)
+        https://geoserver.nl/rest/agn/gebouwen/3100000117486
+        https://geoserver.nl/rest/agn/gebouwen?postcode=1094jb&huisnummer=21
+        https://geoserver.nl/rest/agn/adressen/363010000705816
+        https://geoserver.nl/rest/agn/adressen?postcode=1053el&huisnummer=188
+        https://geoserver.nl/rest/agn/gebouwen?postcode=1053el&huisnummer=188&huisnrtoev=H
         */
 
     }
