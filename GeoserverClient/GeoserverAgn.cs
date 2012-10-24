@@ -10,8 +10,9 @@ namespace GeoserverClient
 {
     public class GeoserverAgn
     {
-        //private HttpWebRequest request;
-        private const string BaseUrl = "http://geoserver.nl/rest/agn";
+        public static string BaseUrl = "https://geoserver.nl/rest/agn";
+        public static string UserId = string.Empty;
+
         static readonly RestClient Client = new RestClient(BaseUrl);
         
         public static void GetGebouwen(string wkt, Action<List<Gebouw>> callback )
@@ -25,6 +26,7 @@ namespace GeoserverClient
         {
             var request = new RestRequest("gebouwen");
             request.AddParameter(id, ParameterType.UrlSegment);
+            if (!string.IsNullOrEmpty(UserId)) request.AddParameter("uid", UserId); 
             Client.ExecuteAsync<Gebouw>(request, response => callback(response.Data));
         }
 
@@ -35,7 +37,7 @@ namespace GeoserverClient
             if (huisnummer != string.Empty) request.AddParameter("huisnummer", huisnummer);
             if (huisletter != string.Empty) request.AddParameter("huisletter", huisletter);
             if(huisnummerToevoeging!=string.Empty) request.AddParameter("huisnrtoev", huisnummerToevoeging);
-
+            if (!string.IsNullOrEmpty(UserId)) request.AddParameter("uid", UserId); 
             Client.ExecuteAsync<List<Gebouw>>(request, response => callback(response.Data));
         }
 
@@ -43,6 +45,7 @@ namespace GeoserverClient
         {
             var request = new RestRequest("adressen");
             request.AddParameter(id, ParameterType.UrlSegment);
+            if (!string.IsNullOrEmpty(UserId)) request.AddParameter("uid", UserId);
             Client.ExecuteAsync<Adres>(request, response => callback(response.Data));
         }
 
@@ -53,11 +56,9 @@ namespace GeoserverClient
             if (huisnummer != string.Empty) request.AddParameter("huisnummer", huisnummer);
             if (huisletter != string.Empty) request.AddParameter("huisletter", huisletter);
             if(huisnummerToevoeging!=string.Empty) request.AddParameter("huisnrtoev", huisnummerToevoeging);
+            if (!string.IsNullOrEmpty(UserId)) request.AddParameter("uid", UserId);
             Client.ExecuteAsync<List<Adres>>(request, response => callback(response.Data));
         }
-
-
-
 
 
         /**
