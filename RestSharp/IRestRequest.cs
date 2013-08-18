@@ -116,8 +116,8 @@ namespace RestSharp
 		/// <param name="path">Full path to file to upload</param>
 		/// <returns>This request</returns>
 		IRestRequest AddFile (string name, string path);
-
-		/// <summary>
+#endif
+        /// <summary>
 		/// Adds the bytes to the Files collection with the specified file name
 		/// </summary>
 		/// <param name="name">The parameter name to use in the request</param>
@@ -135,7 +135,7 @@ namespace RestSharp
 		/// <param name="contentType">The MIME type of the file to upload</param>
 		/// <returns>This request</returns>
 		IRestRequest AddFile (string name, byte[] bytes, string fileName, string contentType);
-#endif
+
 
 		/// <summary>
 		/// Serializes obj to format specified by RequestFormat, but passes xmlNamespace if using the default XmlSerializer

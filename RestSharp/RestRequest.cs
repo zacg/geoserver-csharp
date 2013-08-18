@@ -155,6 +155,37 @@ namespace RestSharp
 			return AddBody(obj, "");
 		}
 
+        /// <summary>
+        /// Adds the bytes to the Files collection with the specified file name
+        /// </summary>
+        /// <param name="name">The parameter name to use in the request</param>
+        /// <param name="bytes">The file data</param>
+        /// <param name="fileName">The file name to use for the uploaded file</param>
+        /// <returns>This request</returns>
+        public IRestRequest AddFile(string name, byte[] bytes, string fileName)
+        {
+            return AddFile(FileParameter.Create(name, bytes, fileName));
+        }
+
+        /// <summary>
+        /// Adds the bytes to the Files collection with the specified file name and content type
+        /// </summary>
+        /// <param name="name">The parameter name to use in the request</param>
+        /// <param name="bytes">The file data</param>
+        /// <param name="fileName">The file name to use for the uploaded file</param>
+        /// <param name="contentType">The MIME type of the file to upload</param>
+        /// <returns>This request</returns>
+        public IRestRequest AddFile(string name, byte[] bytes, string fileName, string contentType)
+        {
+            return AddFile(FileParameter.Create(name, bytes, fileName, contentType));
+        }
+
+        private IRestRequest AddFile(FileParameter file)
+        {
+            Files.Add(file);
+            return this;
+        }
+
 		/// <summary>
 		/// Calls AddParameter() for all public, readable properties specified in the white list
 		/// </summary>
