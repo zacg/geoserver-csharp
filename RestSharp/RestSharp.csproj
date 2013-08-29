@@ -57,6 +57,7 @@
     <Compile Include="Deserializers\DeserializeAsAttribute.cs" />
     <Compile Include="Deserializers\DotNetXmlDeserializer.cs" />
     <Compile Include="Deserializers\IDeserializer.cs" />
+    <Compile Include="Deserializers\JsonDeserializers.cs" />
     <Compile Include="Deserializers\XmlAttributeDeserializer.cs" />
     <Compile Include="Deserializers\XmlDeserializer.cs" />
     <Compile Include="Enum.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Serializers\SerializeAsAttribute.cs" />
     <Compile Include="Serializers\XmlSerializer.cs" />
     <Compile Include="SharedAssemblyInfo.cs" />
+    <Compile Include="SimpleJson.cs" />
     <Compile Include="Validation\Require.cs" />
     <Compile Include="Validation\Validate.cs" />
   </ItemGroup>
